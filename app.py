@@ -1,11 +1,15 @@
 import dash
-from dash import dcc, html
-import dash_bootstrap_components as dbc
+from source import layout
 
 
 def main_app() -> None:
     """ Function to be run when app execution"""
-    pass
+    app = dash.Dash()
+    app.layout = main_layout(app)
+
+    # Callback will be here
+
+    app.run_server(debug=True)
 
 
 if __name__ == "__main__":
