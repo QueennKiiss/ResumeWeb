@@ -1,5 +1,5 @@
 import dash
-from source import layout
+from source.layout import main_layout
 
 
 def main_app() -> None:
