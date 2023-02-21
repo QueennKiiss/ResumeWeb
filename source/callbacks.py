@@ -1,10 +1,14 @@
+"""
+Module containing all the methods to implement callbacks
+"""
+
 from dash import Dash, ctx
-from dash.dependencies import Input, Output, State
-import dash_bootstrap_components as dbc
+from dash.dependencies import Input, Output
 from source import layout as ly
 
 
 def show_resume_content(app: Dash) -> None:
+    """ callback to show the main content of the resume """
     @app.callback(
         Output('main_page', 'children'),
         Input('view_resume button', 'n_clicks'),
@@ -15,6 +19,7 @@ def show_resume_content(app: Dash) -> None:
 
 
 def modify_navlink_style(app: Dash) -> None:
+    """ callback to modify the style of the tabs in the navlink when press any"""
     @app.callback(
         Output('content_section', 'children'),
         Output('navitem_about', 'style'),
