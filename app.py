@@ -19,3 +19,7 @@ def main_app() -> None:
     callbacks.show_resume_content(app)
 
     app.run_server(debug=True)
+
+
+if __name__ == '__main__':
+    main_app()
