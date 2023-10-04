@@ -103,16 +103,22 @@ def educational_page_content(app: Dash) -> html.Div:
     """ Implement educational page content"""
     def _card_content(header: str, title: str, text: str, years: str, image: str):
         content = [
-            dbc.CardHeader(header, class_name="card-header"),
-            dbc.CardBody([
-                html.H5(title, className="card-title"),
-                html.P(text, className="card-text", ),
-                html.H6(years, className="card_years")
+                dbc.CardHeader(header, class_name="card-header"),
+                dbc.CardBody([
+                    dbc.Row([
+                        dbc.Col([
+                            html.H5(title, className="card-title"),
+                            html.P(text, className="card-text", ),
+                            html.H6(years, className="card_years")
+                        ]),
+                        dbc.Col([
+                            html.Div(
+                                html.Img(className="uni_logo", src=app.get_asset_url(image), ),
+                                className="uni_logo_container"
+                            ),
+                        ])
+                    ])
                 ]),
-            html.Div(
-                html.Img(className="uni_logo", src=app.get_asset_url(image), ),
-                className="uni_logo_container"
-                ),
             ]
         return content
 
@@ -144,7 +150,7 @@ def educational_page_content(app: Dash) -> html.Div:
         image=images.USAL_LOGO
         )
 
-    row_1 = dbc.Row([
+    row_11 = dbc.Row([
         dbc.Col(dbc.Card(doctorate, color="info", outline=True)),
         dbc.Col(dbc.Card(master_elect, color="info", outline=True)),
         dbc.Col(dbc.Card(master_phys, color="info", outline=True)),
@@ -152,7 +158,20 @@ def educational_page_content(app: Dash) -> html.Div:
             ],
         className="mb-4", )
 
-    cards = html.Div([row_1])
+    row_1 = dbc.Row([
+        dbc.Col(dbc.Card(doctorate, color="info", outline=True)),
+        dbc.Col(dbc.Card(master_elect, color="info", outline=True)),
+            ],
+        className="mb-4", )
+    
+    row_2= dbc.Row([
+        dbc.Col(dbc.Card(master_phys, color="info", outline=True)),
+        dbc.Col(dbc.Card(grade, color="info", outline=True)),
+            ],
+        className="mb-4", )
+    
+    cards = html.Div([row_1, row_2])
+    
     return html.Div(
         id="educational_page",
         className="page_container",
