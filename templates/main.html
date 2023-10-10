@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="author" content="Marcos Maestro Izquierdo"/>
+    <meta name="StartDate" content="2023/10/04"/>
+    <title>Marcos Maestro Resume/Portfolio</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    {% block link_css_file %}
+    {% endblock%}
+
+</head>
+
+<body>
+    <header>
+        <a href="" >
+            <img src="static/images/quora_white.png" alt="Queenkiss" width="60px" height="60px">
+            <!-- <img src="static/images/icons8-alphabet-67.png" alt="Queenkiss" role="img"> -->
+            <!-- <strong>Marcos</strong><small>Maestro</small> -->
+        </a>
+        <div class="links-container">
+            <a href="#home">HOME</a>
+            <a href="#about">ABOUT</a>
+            <a href="#work">WORK</a>
+            <a href="#contact">CONTACT</a>
+        </div>
+        <div>
+            <a href="https://www.linkedin.com/in/marcosmaestroizquierdo/" style="text-decoration:none">
+                <img src="static/images/icons8-linkedin-100-white.png" alt="Linkedin" width="40px" height="40px">
+            </a>
+            <a href="https://github.com/QueennKiiss">
+                <img src="static/images/icons8-github-96-white.png" alt="Github" width="40px" height="40px">
+            </a>
+        </div>
+    </header>
+
+    {% block body_content %}
+    {% endblock%}
+
+    <footer>
+        <p>&copy;2023 Developed by: Marcos Maestro Izquierdo</p>
+        <div>
+            <a href="#home" style="text-decoration:none">home</a>
+            <a href="#about" style="text-decoration:none">about</a>
+            <a href="#work" style="text-decoration:none">work</a>
+            <a href="#contact" style="text-decoration:none">contact</a>
+        </div>
+    </footer>
+</body>
+
+</html>
