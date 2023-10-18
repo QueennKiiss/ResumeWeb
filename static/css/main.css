@@ -10,13 +10,16 @@ html{
 
 body{
     /* background: linear-gradient(292.57deg, #1B2C2D 0.43%, #347478 100%); */
+    height: 100vh;
     background: #ffffff;
+    height: 100%;
     margin: 0px;
     padding: 0px;
 }
 
 header{
-    position: fixed;
+    position: sticky;
+    z-index:100;
     top: 0px; left: 0px;
     width: 100%;
     height: 10%;
@@ -29,12 +32,15 @@ header{
     justify-content: space-between;
     align-items: center;
 }
+
+section{
+    height: 100%;
+}
+
 footer{
-    position: fixed;
-    bottom: 0px; left: 0px;
     width: 100%;
-    height:10%;
-    background: #f5f5f5;
+    height:10em;
+    background: gainsboro;
     padding-left: 25%;
     padding-right: 25%;
     display:-ms-flexbox!important;
@@ -42,7 +48,7 @@ footer{
     flex-direction:row;
     justify-content: space-between;
     align-items: center;
-    font-size: 0.75rem;
+    font-size: 1rem;
 }
 
 footer a{
@@ -62,3 +68,14 @@ footer a{
     text-decoration:none
 }
 
+.cover-image-container{
+    background: lightseagreen;
+    padding: 1rem;
+    height: 100vh;
+}
+
+.cover-content-container{
+    background: lightskyblue;
+    box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+    height: 100vh;
+}
